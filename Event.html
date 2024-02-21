@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Daksham</title>
 </head>
@@ -43,16 +44,25 @@
     text-shadow: -10px 5px 10px rgba(0, 0, 0, 0.255);
     font-size: x-large;
     }
+    @media only screen and (max-width: 500px){
+        .card{
+        height: 254px;
+        transform: skew(0deg);
+        margin-bottom: 0px;
+        }
+  }
+        
 </style>
 <body>
     <header>
         <a href="index.html">
             <img src="Logo.png" alt="Daksham Logo">
         </a>
-        <nav>
+        <nav id="nav">
             <a href="About.html">About</a>
             <a href="Event.html">Event</a>
         </nav>
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" onclick="shnav()"><path fill="none" stroke="#38993a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </header>
     <main>
         <div class="card">
@@ -117,4 +127,5 @@
         </div>
     </main>
 </body>
+<script src="main.js"></script>
 </html>

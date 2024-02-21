@@ -6,6 +6,7 @@ function nxt(){
     mnf.style.display="block";
 }
 function shnav() {
+    console.count(nav.style.display);
     if (nav.style.display=="inline") {
         nav.style.display="none";
     } else {
