@@ -12,7 +12,7 @@
 <script>
     var subbmited=false;
 </script>
-<iframe src="" frameborder="0" name="pmnt" id="pmnt" style="display: none;" onload="if(subbmited){window.location='End.html';}"></iframe>
+<iframe src="" frameborder="0" name="pmnt" id="pmnt" style="display: none;" onload="submitcustom()"></iframe>
 
 <body>
     <header>
@@ -26,13 +26,13 @@
     </header>
 
 <!--
-    https://docs.google.com/forms/d/e/1FAIpQLSe6XXaeg8UsumLEZwbhjaVNAc18Pkmj9twWJFY1JBVeUj89fg/viewform
+    https://docs.google.com/forms/d/e/1FAIpQLSdC__6o1avlCGZwIDYR9L-ICpg4lp10AZ32YDFzpt-ymP4s2A/viewform
     ?usp=pp_url&
-    entry.733946712=Kunal&
-    entry.1628981868=abc@123&
-    entry.383515123=112233&
-    entry.494228166=xyz&
-    entry.574157925=Gehu/Geu
+    entry.761680175=Kunal&
+    entry.423872134=abc@123&
+    entry.1255899877=112233&
+    entry.29132297=xyz
+    &entry.960916434=Gehu+/+Geu
 -->
 
 
@@ -63,32 +63,32 @@
             <br>
         </section>
         
-        <form action="http://docs.google.com/forms/d/e/1FAIpQLSe6XXaeg8UsumLEZwbhjaVNAc18Pkmj9twWJFY1JBVeUj89fg/formResponse" id="form" class="content" >
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdC__6o1avlCGZwIDYR9L-ICpg4lp10AZ32YDFzpt-ymP4s2A/formResponse" id="form" class="content" target="pmnt" onsubmit="subbmited=true;">
             <div class="input-group animate__animated animate__backInDown">
                 <label class="label">Name</label>
-                <input name="entry.733946712" class="input" type="text" required>
+                <input name="entry.761680175" class="input" type="text" required>
             </div>
             <br>
             <div class="input-group animate__animated animate__backInDown">
                 <label class="label">Email</label>
-                <input name="entry.1628981868" class="input" type="email" required>
+                <input name="entry.423872134" class="input" type="email" required>
             </div>
             <br>
             <div class="input-group animate__animated animate__backInDown">
                 <label class="label">Ph. No.</label>
-                <input name="entry.383515123" class="input" type="tel" required>
+                <input name="entry.1255899877" class="input" type="tel" required>
             </div>
             <br>
             <div class="input-group animate__animated animate__backInDown">
                 <label class="label">Course</label>
-                <input name="entry.494228166" class="input" type="text " required>
+                <input name="entry.29132297" class="input" type="text " required>
             </div>
             <br>
             <div class="input-group animate__animated animate__backInDown">
                 <label class="label">Collage</label>
 
                 <label class="checkbox" style="display: flex; align-items: center;">
-                    <input type="radio" name="entry.574157925" value="Gehu / Geu">
+                    <input type="radio" name="entry.960916434" value="Gehu / Geu">
                     <div class="checkbox-circle">
                       <svg viewBox="0 0 50 50" class="checkmark">
                         <circle fill="none" r="25" cy="26" cx="26" class="checkmark-circle"></circle>
@@ -100,7 +100,7 @@
                 <br>
 
                 <label class="checkbox">
-                    <input type="radio" name="entry.574157925" value="other" onchange="othcol()">
+                    <input type="radio" name="entry.960916434" value="other" onchange="othcol()">
                     <div class="checkbox-circle">
                       <svg viewBox="0 0 52 52" class="checkmark">
                         <circle fill="none" r="25" cy="26" cx="26" class="checkmark-circle"></circle>

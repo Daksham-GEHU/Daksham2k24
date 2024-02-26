@@ -17,3 +17,14 @@ function shnav() {
 function othcol(){
     oth.disabled = false;
 }
+function submitcustom(){
+    if(subbmited){
+        if(oth.disabled)
+        {
+            window.location='Payment/PaymentGehuGeu.html';
+        }
+        else{
+            window.location='Payment/PaymentOther.html';
+        }
+    }
+}
