@@ -83,6 +83,21 @@ form{
     padding-block: 40px !important;
 }
 
+label[for="imageFile"]{
+  color: #793a00;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  border: 3px dashed #793a00;
+  border-radius: 10px;
+  width: 80%;
+  padding-block: 44px;
+  cursor: pointer;
+}
+label[for="imageFile"]+input{
+  display: none;
+}
+
 .input-group{
     max-width: fit-content;
     margin: 0 auto;
@@ -119,6 +134,74 @@ form{
 
 
 
+  .checkbox {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+  
+  .checkbox input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkbox-circle {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    transition: all 0.3s;
+  }
+  
+  .checkbox input[type="radio"]:checked ~ .checkbox-circle {
+    background: #4CAF50;
+    border-color: #4CAF50;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+  .checkbox input[type="radio"]:checked ~ .checkbox-circle .checkmark {
+    opacity: 1;
+  }
+  
+  .checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    transition: stroke-dashoffset 0.3s;
+  }
+  
+  .checkbox input[type="radio"]:checked ~ .checkbox-circle .checkmark-circle {
+    stroke-dashoffset: 0;
+  }
+  
+  .checkmark-kick {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    transition: stroke-dashoffset 0.3s;
+  }
+  
+  .checkbox input[type="radio"]:checked ~ .checkbox-circle .checkmark-kick {
+    stroke-dashoffset: 0;
+  }
+  
+
+
+
+
 button {
     padding: 15px 40px;
     border-radius: 10px;
@@ -132,27 +215,31 @@ button {
     cursor: pointer;
     margin: 0 auto;
     display: block;
-  }
+}
   
-  button:hover {
+button:hover {
     box-shadow: #ec9b00 0px 7px 0px 0px;
-  }
+}
   
-  button:active {
+button:active {
     background-color: #f5bb18;
     /*50, 168, 80*/
     box-shadow: #ec9b00 0px 0px 0px 0px;
     transform: translateY(5px);
     transition: 200ms;
-  }
-  
-
+}
+   
 
 
 footer{
    display: flex;
    background-color:#05060f17;
-   padding: 15px 7px;
+   padding: 32px 7px;
+   justify-content: space-around;
+}
+h2{
+  font-family: "League Spartan", sans-serif;
+  padding-block: 10px;
 }
 #Contact a{
   display:flex;

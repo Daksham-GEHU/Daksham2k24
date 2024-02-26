@@ -1,6 +1,7 @@
 let tnc=document.getElementById("info");
 let mnf=document.getElementById("form");
 let nav=document.getElementById("nav");
+let oth=document.getElementById("other");
 function nxt(){
     tnc.style.display="none";
     mnf.style.display="block";
@@ -12,5 +13,7 @@ function shnav() {
     } else {
         nav.style.display="inline";
     }
-    
+}
+function othcol(){
+    oth.disabled = false;
 }
