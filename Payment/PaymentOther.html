@@ -32,8 +32,11 @@
             <a href="upi://pay?pa=ayushnautiyal924-1@oksbi&pn=Ayush%20Nautiyal&aid=uGICAglCNkN-OBA">
                 <img src="ayush-payment.png" alt="PaymentQR" >
             </a>
-            <form action="" style="display: block;">
-                <label for="imageFile">Upload Payment Screen Shot</label>
+            <form action="../End.html" style="display: block;">
+                <label for="imageFile">
+                    Upload Payment Screen Shot
+                    <img src="" alt="" id="img" width="50">
+                </label>
                 <input type="file" id="imageFile" accept="image/*">
                 <br><br>
                 <button type="submit">Submit</button>
@@ -50,7 +53,7 @@
         <section id="DEV" >
             <h2>Devloped By</h2>
             <img src="" alt="S.W.A.G. Dev Logo">
-            <img src="" alt="Blaze Forge Logo">
+            <img src="../Sponsers/BlazeForge.png" alt="Blaze Forge Logo">
         </section>
         <section id="Contact">
             <h2>Contact Us</h2>
@@ -69,4 +72,45 @@
         </section>
     </footer>
 </body>
+<script>
+    // This line declares a variable called "url" and assigns it a value of "Api_Endpoint_Url"
+    let url = "https://script.google.com/macros/s/AKfycbwQGwssIiYhle1SQN_sQqlWDp-tgfiYhpYQtTT6oL6ayXD41-WfaLrIEDpV0kCQsGLN/exec";
+    // This line declares a variable called "file" and assigns it the value of the first input element on the page
+    let file = document.querySelector("input");
+    // This line declares a variable called "img" and assigns it the value of the first image element on the page
+    let img = document.getElementById("img");
+    let btn = document.querySelector("button");
+    // This line adds an event listener to the "change" event of the "file" input element
+    file.addEventListener('change',()=>{
+        // This line creates a new FileReader object called "fr"
+        let fr = new FileReader();
+        // This line adds an event listener to the "loadend" event of the FileReader object
+        fr.addEventListener('loadend',()=>{
+            // This line declares a variable called "res" and assigns it the result of the FileReader object
+            let res = fr.result;
+            // This line sets the "src" attribute of the "img" element to the value of "res"
+            img.src=res;
+            // This line splits the "res" variable into an array, using the string "base64," as the separator, and assigns the second element to a variable called "spt"
+            let spt = res.split("base64,")[1];
+            // This line creates an object called "obj" with three properties: "base64", "type", and "name"
+            let obj = {
+                base64:spt,
+                type:file.files[0].type,
+                name:file.files[0].name
+            }
+            // This line sends a POST request to the URL specified in the "url" variable, with the "obj" object as the request body
+            fetch(url,{
+                method:"POST",
+                body:JSON.stringify(obj)
+            })
+            // This line waits for the response from the server and converts it to text
+            .then(r=>r.text())
+            // This line logs the response data to the console
+            .then(data=>btn.disabled=false)
+ 
+        })
+        // This line reads the selected file as a data URL
+        fr.readAsDataURL(file.files[0])
+    })
+</script>
 </html>

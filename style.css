@@ -228,7 +228,11 @@ button:active {
     transform: translateY(5px);
     transition: 200ms;
 }
-   
+
+button:disabled{
+  background-color: #a49b809b;
+  box-shadow: #a59d8e  0px 10px 0px 0px;
+}
 
 
 footer{
@@ -240,6 +244,11 @@ footer{
 h2{
   font-family: "League Spartan", sans-serif;
   padding-block: 10px;
+}
+footer img{
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
 }
 #Contact a{
   display:flex;

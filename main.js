@@ -2,6 +2,7 @@ let tnc=document.getElementById("info");
 let mnf=document.getElementById("form");
 let nav=document.getElementById("nav");
 let oth=document.getElementById("other");
+let ov=document.getElementById("othervalue");
 function nxt(){
     tnc.style.display="none";
     mnf.style.display="block";
@@ -17,6 +18,9 @@ function shnav() {
 function othcol(){
     oth.disabled = false;
 }
+function grcol(){
+    oth.disabled = true;
+}
 function submitcustom(){
     if(subbmited){
         if(oth.disabled)
@@ -27,4 +31,8 @@ function submitcustom(){
             window.location='Payment/PaymentOther.html';
         }
     }
+}
+function othval(){
+    ov.value=oth.value;
+    console.log(oth.value);
 }
