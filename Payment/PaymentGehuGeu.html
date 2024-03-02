@@ -14,6 +14,17 @@
         margin:  auto;
     }
 </style>
+
+<script>
+    var subbmited=false;
+</script>
+<iframe src="" frameborder="0" name="end" id="end" style="display: none;" onload="if(subbmited){window.location='../End.html'}"></iframe>
+
+<!--
+    https://docs.google.com/forms/d/e/1FAIpQLSeqVaxjJuDTi682aHYOa3tGYEQKo69AiMVuxxCaxu8MNZvdBg/viewform?
+    usp=pp_url&entry.367681889=a&entry.1474826847=aa
+-->
+
 <body>
     <header>
         <a href="../index.html">
@@ -32,12 +43,18 @@
             <a href="upi://pay?pa=niyatisinghal66@oksbi&pn=Niyati%20Singhal&aid=uGICAglCP8s77XQ">
                 <img src="niyati-payment.png" alt="PaymentQR">
             </a>
-            <form action="../End.html" style="display: block;">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSeqVaxjJuDTi682aHYOa3tGYEQKo69AiMVuxxCaxu8MNZvdBg/formResponse" style="display: block;" target="end" onsubmit="subbmited=true;">
+               
                 <label for="imageFile">
                     Upload Payment Screen Shot with transaction id
                     <img src="" alt="" id="img" width="50">
                 </label>
                 <input type="file" id="imageFile" accept="image/*">
+                <br>
+                <div class="input-group animate__animated animate__backInDown">
+                    <label class="label">Student ID</label>
+                    <input name="entry.1474826847" class="input" type="text" required>
+                </div>
                 <br><br>
                 <button type="submit" disabled>Submit</button>
             </form>
@@ -78,9 +95,9 @@
 </body>
 <script>
     // This line declares a variable called "url" and assigns it a value of "Api_Endpoint_Url"
-    let url = "https://script.google.com/macros/s/AKfycbwQGwssIiYhle1SQN_sQqlWDp-tgfiYhpYQtTT6oL6ayXD41-WfaLrIEDpV0kCQsGLN/exec";
+    let url = "https://script.google.com/macros/s/AKfycbwHrsI8PdSrn1KslcLnMkGIxA75oQHM2iCDiihNp7dVu-ziArLfSirA2mCY1KAcIsiv/exec";
     // This line declares a variable called "file" and assigns it the value of the first input element on the page
-    let file = document.querySelector("input");
+    let file = document.getElementById("imageFile");
     // This line declares a variable called "img" and assigns it the value of the first image element on the page
     let img = document.getElementById("img");
     let btn = document.querySelector("button");
@@ -111,7 +128,6 @@
             .then(r=>r.text())
             // This line logs the response data to the console
             .then(data=>btn.disabled=false)
- 
         })
         // This line reads the selected file as a data URL
         fr.readAsDataURL(file.files[0])
